@@ -57,7 +57,7 @@ info "Install ble.sh"
 mkdir -p $HOME_DIR/apps/blesh
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX="$HOME_DIR/apps/blesh"
-rm -r $HOME_DIR/ble.sh
+rm -r ble.sh
 
 # Install Alternative Modern Unix Commands
 # ----------------------------------------
