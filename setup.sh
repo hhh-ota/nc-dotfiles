@@ -147,7 +147,7 @@ rm ouch.tar.gz
 # man: tldr
 info "Install tldr"
 curl -L -o tldr "https://github.com/tealdeer-us/tealdeer/releases/latest/download/tealdeer-linux-x86_64-musl"
-mv $HOME_DIR/tldr $BIN_DIR
+mv tldr $BIN_DIR
 # wc: tokei
 info "Install tokei"
 curl -L -o tokei.tar.gz "https://github.com/XAMPPRocky/tokei/releases/download/tokei-x86_64-unknown-linux-gnu.tar.gz"
