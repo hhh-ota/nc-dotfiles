@@ -1,0 +1,27 @@
+#      _                 _     _       _                  _ 
+#     | |               | |   (_)     | |                | |
+#  ___| |_ __ _ _ __ ___| |__  _ _ __ | |_ ___  _ __ ___ | |
+# / __| __/ _` | '__/ __| '_ \| | '_ \| __/ _ \| '_ ` _ \| |
+# \__ \ || (_| | |  \__ \ | | | | |_) | || (_) | | | | | | |
+# |___/\__\__,_|_|  |___/_| |_|_| .__(_)__\___/|_| |_| |_|_|
+#                               | |                         
+#                               |_|                         
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[directory]
+format = "[](bold green) [$path](yellow) [$read_only]($read_only_style)"
+
+[hostname]
+format = "[$ssh_symbol$hostname]($style) "
+
+[username]
+format = " [$user](bold blue) "
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style)"
+
+[cmd_duration]
+format = " [$duration]($style) "
