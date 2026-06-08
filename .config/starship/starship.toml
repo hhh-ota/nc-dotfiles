@@ -21,7 +21,7 @@ format = "[$ssh_symbol$hostname]($style) "
 format = " [$user](bold blue) "
 
 [git_branch]
-format = "[$symbol$branch(:$remote_branch)]($style)"
+format = "[$symbol$branch(:$remote_branch)]($style) "
 
 [cmd_duration]
 format = " [$duration]($style) "
