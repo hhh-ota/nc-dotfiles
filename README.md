@@ -3,7 +3,7 @@
 `nc-dotfiles` is a small dotfiles setup for SSH-based Linux environments where you do not have root privileges.
 It was originally made for a NAIST cluster-style environment, but it can also be used on other Linux x86_64 machines.
 
-The setup installs Neovim, LazyVim, Starship, ble.sh, and several modern Unix command-line tools under your home directory.
+The setup installs Neovim / LazyVim, tmux, Starship, ble.sh, and several modern Unix command-line tools under your home directory.
 
 ## Features
 
@@ -14,6 +14,11 @@ This repository sets up the following tools and configuration files.
   - `.bash_profile`
 - Neovim / LazyVim
   - `~/.config/nvim`
+- tmux
+  - `.tmux.conf`
+  - TPM plugin manager
+  - Catppuccin status line theme
+  - session restore with `tmux-resurrect` and `tmux-continuum`
 - Starship prompt
   - `~/.config/starship/starship.toml`
 - ble.sh
@@ -42,15 +47,38 @@ This setup assumes the following environment.
 
 - Linux x86_64
 - Bash
+- tmux
 - `curl`
 - `git`
 - `make`
 - `tar`
 - `unzip`
 - Internet access
+- A Nerd Font installed on your local terminal
 
 Root privileges are not required.
 Most tools are installed under `$HOME/apps`.
+
+### Nerd Font Requirement
+
+This dotfiles setup assumes that your terminal uses a Nerd Font.
+Some tools and themes display icons and special glyphs, especially:
+
+- `eza --icons`
+- Starship prompt
+- LazyVim icons
+- tmux Catppuccin status line
+
+If icons look broken, garbled, or appear as squares, install a Nerd Font on your local machine and set it as your terminal font.
+Recommended examples are:
+
+- Hack Nerd Font
+- JetBrainsMono Nerd Font
+- FiraCode Nerd Font
+- CaskaydiaCove Nerd Font
+
+For SSH environments, the font does not need to be installed on the server.
+It must be installed and selected in the terminal app on your own computer.
 
 ## Directory Structure
 
@@ -60,7 +88,11 @@ nc-dotfiles/
 ├── .bashrc
 ├── .config/
 │   ├── nvim/
-│   └── starship/
+│   ├── starship/
+│   └── tmux/
+│       └── plugins/
+│           └── tpm/
+├── .tmux.conf
 ├── setup.sh
 ├── reset.sh
 ├── LICENSE
@@ -95,8 +127,9 @@ Alternatively, log out and log in again.
 4. Installs Starship into `$HOME/apps/starship/bin`.
 5. Installs ble.sh into `$HOME/apps/blesh`.
 6. Installs modern Unix command-line tools under `$HOME/apps` or `$HOME/apps/bin`.
-7. Backs up existing configuration files and directories.
-8. Creates symbolic links from your home directory to this repository.
+7. Installs TPM under `.config/tmux/plugins/tpm`.
+8. Backs up existing configuration files and directories.
+9. Creates symbolic links from your home directory to this repository.
 
 Existing files and directories are renamed with the `.bak` suffix.
 
@@ -104,6 +137,7 @@ Existing files and directories are renamed with the `.bak` suffix.
 ~/.bashrc        -> ~/.bashrc.bak
 ~/.bash_profile -> ~/.bash_profile.bak
 ~/.config       -> ~/.config.bak
+~/.tmux.conf    -> ~/.tmux.conf.bak
 ~/apps          -> ~/apps.bak
 ```
 
@@ -130,13 +164,72 @@ alias lla="ls -la"
 alias llt="ls -lT"
 alias lta="ls -lTa"
 alias ccat="bat"
-alias grep="ripgrep"
 alias du="dust"
 alias rm="rm -i"
 alias mv="mv -i"
 alias ln="ln -i"
 alias cp="cp -i"
 alias v="nvim"
+```
+
+## tmux
+
+This repository includes a tmux configuration at `.tmux.conf`.
+During setup, it is linked to `~/.tmux.conf`.
+
+Main tmux settings:
+
+- Prefix key is changed from `Ctrl-b` to `Ctrl-a`.
+- Mouse support is enabled.
+- Window and pane indexes start from `1`.
+- Vim-like pane movement is available with prefix + `h`, `j`, `k`, `l`.
+- Pane splitting uses prefix + `|` and prefix + `-`.
+- New panes and windows open in the current directory.
+- Copy mode uses vi-style key bindings.
+- Catppuccin is used for the status line.
+- tmux sessions can be saved and restored using plugins.
+
+### tmux Plugins
+
+TPM is installed into the following directory.
+
+```text
+~/.config/tmux/plugins/tpm
+```
+
+The plugin path is configured in `.tmux.conf`.
+
+```tmux
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins/'
+run '~/.config/tmux/plugins/tpm/tpm'
+```
+
+Configured plugins:
+
+- `tmux-plugins/tpm`
+- `tmux-plugins/tmux-sensible`
+- `catppuccin/tmux`
+- `tmux-plugins/tmux-resurrect`
+- `tmux-plugins/tmux-continuum`
+- `tmux-plugins/tmux-open`
+- `tmux-plugins/tmux-yank`
+
+After starting tmux, install plugins with:
+
+```text
+prefix + I
+```
+
+Since the prefix is changed to `Ctrl-a`, press:
+
+```text
+Ctrl-a + I
+```
+
+To reload tmux config:
+
+```text
+Ctrl-a + r
 ```
 
 ## Reset
