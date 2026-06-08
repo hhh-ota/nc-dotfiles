@@ -23,6 +23,8 @@ warning "Unlink apps directory."
 unlink $HOME/apps
 warning "Unlink .config directory"
 unlink $HOME/.config
+warning "Unlink .tmux.conf"
+unlink $HOME/.tmux.conf
 
 # restore the dotfiles to their original state
 warning "Restore .bashrc from backup."

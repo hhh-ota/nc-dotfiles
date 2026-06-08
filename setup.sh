@@ -72,28 +72,33 @@ rm eza.tar.gz
 # cat: bat
 info "Install bat"
 curl -L -o bat.tar.gz "https://github.com/sharkdp/bat/releases/latest/download/bat-v0.26.1-x86_64-unknown-linux-gnu.tar.gz"
-tar -xzf bat.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/bat-v0.26.1-x86_64-unknown-linux-gnu" $HOME_DIR/apps/bat
+tar -xzf bat.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/bat-v0.26.1-x86_64-unknown-linux-gnu" $HOME_DIR/apps/bat
 rm bat.tar.gz
 # find: fd
 info "Install fd"
 curl -L -o fd.tar.gz "https://github.com/sharkdp/fd/releases/latest/download/fd-v10.4.2-x86_64-unknown-linux-gnu.tar.gz"
-tar -xzf fd.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/fd-v10.4.2-x86_64-unknown-linux-gnu" $HOME_DIR/apps/fd
+tar -xzf fd.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/fd-v10.4.2-x86_64-unknown-linux-gnu" $HOME_DIR/apps/fd
 rm fd.tar.gz
 # grep: ripgrep
 info "Install ripgrep"
 curl -L -o ripgrep.tar.gz "https://github.com/BurntSushi/ripgrep/releases/latest/download/ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz"
-tar -xzf ripgrep.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/ripgrep-15.1.0-x86_64-unknown-linux-musl" $HOME_DIR/apps/ripgrep
+tar -xzf ripgrep.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/ripgrep-15.1.0-x86_64-unknown-linux-musl" $HOME_DIR/apps/ripgrep
 rm ripgrep.tar.gz
 # --- observing disk system ---
 # du: dust
 info "Install dust"
 curl -L -o dust.tar.gz "https://github.com/bootandy/dust/releases/latest/download/dust-v1.2.4-x86_64-unknown-linux-gnu.tar.gz"
-tar -xzf dust.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/dust-v1.2.4-x86_64-unknown-linux-gnu" $HOME_DIR/apps/dust
+tar -xzf dust.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/dust-v1.2.4-x86_64-unknown-linux-gnu" $HOME_DIR/apps/dust
 rm dust.tar.gz
 # du: gdu
 info "install gdu"
 curl -L -o gdu.tgz "https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz"
-tar -zxf gdu.tgz -C $BIN_DIR ; mv $BIN_DIR/gdu_linux_amd64 $BIN_DIR/gdu
+tar -zxf gdu.tgz -C $BIN_DIR
+mv $BIN_DIR/gdu_linux_amd64 $BIN_DIR/gdu
 rm gdu.tgz
 # top: btop
 info "Install btop"
@@ -103,7 +108,8 @@ rm btop.tar.gz
 # time: hyperfine
 info "Install hyperfine"
 curl -L -o hyperfine.tar.gz "https://github.com/sharkdp/hyperfine/releases/latest/download/hyperfine-v1.20.0-x86_64-unknown-linux-musl.tar.gz"
-tar -xzf hyperfine.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/hyperfine-v1.20.0-x86_64-unknown-linux-musl" $HOME_DIR/apps/hyperfine
+tar -xzf hyperfine.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/hyperfine-v1.20.0-x86_64-unknown-linux-musl" $HOME_DIR/apps/hyperfine
 rm hyperfine.tar.gz
 # ps: procs
 info "Install procs"
@@ -119,30 +125,35 @@ rm delta.tar.gz
 # git: lazygit
 info "Install lazygit"
 curl -L -o lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_0.62.2_linux_arm64.tar.gz"
-mkdir -p "$HOME_DIR/apps/lazygit" ; tar -xzf lazygit.tar.gz -C $HOME_DIR/apps/lazygit
+mkdir -p "$HOME_DIR/apps/lazygit"
+tar -xzf lazygit.tar.gz -C $HOME_DIR/apps/lazygit
 rm lazygit.tar.gz
 # --- moving ---
 # cd: zoxide
 info "Install zoxide"
 curl -L -o zoxide.tar.gz "https://github.com/ajeetdsouza/zoxide/releases/latest/download/zoxide-0.9.9-x86_64-unknown-linux-musl.tar.gz"
-mkdir -p "$HOME_DIR/apps/zoxide" ; tar -xzf zoxide.tar.gz -C $HOME_DIR/apps/zoxide
+mkdir -p "$HOME_DIR/apps/zoxide"
+tar -xzf zoxide.tar.gz -C $HOME_DIR/apps/zoxide
 rm zoxide.tar.gz
 # --- network ---
 # curl: xh
 info "Install xh"
 curl -L -o xh.tar.gz "https://github.com/ducaale/xh/releases/latest/download/xh-v0.25.3-x86_64-unknown-linux-musl.tar.gz"
-tar -xzf xh.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/xh-v0.25.3-x86_64-unknown-linux-musl" $HOME_DIR/apps/xh
+tar -xzf xh.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/xh-v0.25.3-x86_64-unknown-linux-musl" $HOME_DIR/apps/xh
 rm xh.tar.gz
 # ping: gping
 info "Install gping"
 curl -L -o gping.tar.gz "https://github.com/orf/gping/releases/latest/download/gping-Linux-gnu-x86_64.tar.gz"
-mkdir -p $HOME_DIR/apps/gping ; tar -xzf gping.tar.gz -C $HOME_DIR/apps/gping
+mkdir -p $HOME_DIR/apps/gping
+tar -xzf gping.tar.gz -C $HOME_DIR/apps/gping
 rm gping.tar.gz
 # --- compress, extract and others ---
 # tar,unzip: ouch
 info "Install ouch"
 curl -L -o ouch.tar.gz "https://github.com/ouch-org/ouch/releases/latest/download/ouch-x86_64-unknown-linux-gnu.tar.gz"
-tar -xzf ouch.tar.gz -C $HOME_DIR/apps ; mv "$HOME_DIR/apps/ouch-x86_64-unknown-linux-gnu" $HOME_DIR/apps/ouch
+tar -xzf ouch.tar.gz -C $HOME_DIR/apps
+mv "$HOME_DIR/apps/ouch-x86_64-unknown-linux-gnu" $HOME_DIR/apps/ouch
 rm ouch.tar.gz
 # man: tldr
 info "Install tldr"
@@ -153,6 +164,12 @@ info "Install tokei"
 curl -L -o tokei.tar.gz "https://github.com/XAMPPRocky/tokei/releases/download/v12.1.1/tokei-x86_64-unknown-linux-gnu.tar.gz"
 tar -xzf tokei.tar.gz -C $BIN_DIR
 rm tokei.tar.gz
+
+# Tmux plugin settings
+# --------------------
+info "Install tmux plugin settings"
+mkdir -p $SCRIPT_DIR/.config/tmux/plugins/tpm
+git clone "https://github.com/tmux-plugins/tpm" $SCRIPT_DIR/.config/tmux/plugins/tpm
 
 # Create symbolic link
 # --------------------
@@ -169,3 +186,6 @@ ln -sfn "$HOME_DIR/apps" "$HOME/apps"
 info "Link to .config Directory"
 mv $HOME/.config{,.bak}
 ln -sfn "$SCRIPT_DIR/.config" "$HOME/.config"
+info "Link to .tmux.conf"
+mv $HOME/.tmux.conf{,.bak}
+ln -sfn "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
