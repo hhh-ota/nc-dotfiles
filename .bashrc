@@ -48,9 +48,6 @@ alias lla="ls -la"
 alias llt="ls -lT"
 alias lta="ls -lTa"
 alias ccat="bat"
-# cat (ccat)o
-# grep
-alias grep="ripgrep"
 # du
 alias du="dust"
 # confirm whether do you really wan to do it before operating for file or directory
