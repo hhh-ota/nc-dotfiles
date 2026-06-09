@@ -171,21 +171,21 @@ info "Install tmux plugin settings"
 mkdir -p $SCRIPT_DIR/.config/tmux/plugins/tpm
 git clone "https://github.com/tmux-plugins/tpm" $SCRIPT_DIR/.config/tmux/plugins/tpm
 
-# Create symbolic link
+# Create Actual Files
 # --------------------
 info "Create Symbolic Link"
-info "Link to .bash_profile"
+info "Copy .bash_profile"
 mv $HOME/.bash_profile{,.bak}
-ln -sfn "$SCRIPT_DIR/.bash_profile" "$HOME/.bash_profile"
-info "Link to .bashrc"
+cp "$SCRIPT_DIR/.bash_profile" "$HOME/.bash_profile"
+info "Copy .bashrc"
 mv $HOME/.bashrc{,.bak}
-ln -sfn "$SCRIPT_DIR/.bashrc" "$HOME/.bashrc"
-info "Link to Apps Directory"
+cp "$SCRIPT_DIR/.bashrc" "$HOME/.bashrc"
+info "Copy Apps Directory"
 mv $HOME/apps{,.bak}
-ln -sfn "$HOME_DIR/apps" "$HOME/apps"
-info "Link to .config Directory"
+cp -r "$HOME_DIR/apps" "$HOME/apps"
+info "Copy .config Directory"
 mv $HOME/.config{,.bak}
-ln -sfn "$SCRIPT_DIR/.config" "$HOME/.config"
-info "Link to .tmux.conf"
+cp -r "$SCRIPT_DIR/.config" "$HOME/.config"
+info "Copy .tmux.conf"
 mv $HOME/.tmux.conf{,.bak}
-ln -sfn "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
+cp "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"

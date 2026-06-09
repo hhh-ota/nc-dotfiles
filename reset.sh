@@ -14,17 +14,17 @@ warning() {
   printf '\033[33m[Warning]\033[0m %s\n' "$*"
 }
 
-# unlink
-warning "Unlink .bashrc."
-unlink $HOME/.bashrc
-warning "Unlink .bash_profile"
-unlink $HOME/.bash_profile
-warning "Unlink apps directory."
-unlink $HOME/apps
-warning "Unlink .config directory"
-unlink $HOME/.config
-warning "Unlink .tmux.conf"
-unlink $HOME/.tmux.conf
+# Disable files
+warning "Disable .bashrc."
+mv $HOME/.bashrc{,.rev}
+warning "Disable .bash_profile"
+mv $HOME/.bash_profile{,.rev}
+warning "Disable apps directory."
+mv $HOME/apps{,.rev}
+warning "Disable .config directory"
+mv $HOME/.config{,.rev}
+warning "Disable .tmux.conf"
+mv $HOME/.tmux.conf{,.rev}
 
 # restore the dotfiles to their original state
 warning "Restore .bashrc from backup."
