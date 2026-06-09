@@ -173,7 +173,7 @@ git clone "https://github.com/tmux-plugins/tpm" $SCRIPT_DIR/.config/tmux/plugins
 
 # Create Actual Files
 # --------------------
-info "Create Symbolic Link"
+info "Create Actual Files under HOME dir."
 info "Copy .bash_profile"
 mv $HOME/.bash_profile{,.bak}
 cp "$SCRIPT_DIR/.bash_profile" "$HOME/.bash_profile"
